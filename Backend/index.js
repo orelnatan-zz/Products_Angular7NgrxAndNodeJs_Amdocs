@@ -29,7 +29,6 @@ app.listen(3001, () => {
 /////////////////////////////////////////////////////////////// Products ////////////////////////////////////////////////////////////
 
 // GET all products.
-// front -> GET getAllProducts
 app.get('/getAllProducts', (req, res) => {
 	mySqlConnection.query('SELECT * FROM products', (err, rows, fields) => {
 		if(!err){
@@ -44,7 +43,6 @@ app.get('/getAllProducts', (req, res) => {
 });
 
 // GET product by imdbID (with params).
-// front -> GET getProductById?imdbID="tt0101392"
 app.get('/getProductById', (req, res) => {
 	mySqlConnection.query(`SELECT * FROM products WHERE imdbID = '${req.query.imdbID}'`, (err, rows, fields) => {
         if(rows[0]){
@@ -58,8 +56,7 @@ app.get('/getProductById', (req, res) => {
 	});
 });
 
-// DELETE product by id (with params).
-// front -> DELETE deleteProductById?imdbID="tt0101392"
+// DELETE product by imdbID (with params).
 app.delete('/deleteProductById', (req, res) => {
     mySqlConnection.query(`DELETE FROM products WHERE (imdbID = '${req.query.imdbID}')`, (err, ) => {
         res.status(200).send({
@@ -69,10 +66,8 @@ app.delete('/deleteProductById', (req, res) => {
     });
 });
 
-// Update product title.
-// front -> PUT updateProduct with body: Product
+// Update product (with body).
 app.put('/updateProduct', (req, res) => {
-    console.log(req.body)
     const sqlUpdateQuery = `UPDATE products SET                     \
                             Title = '${req.body.Title}',            \
                             Year = '${req.body.Year}',              \ 
