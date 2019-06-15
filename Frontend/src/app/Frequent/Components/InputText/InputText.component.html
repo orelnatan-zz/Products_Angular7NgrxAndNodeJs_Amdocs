@@ -1,0 +1,14 @@
+
+<div class="inputtext-main">
+    <div class="inputtext-title"> <h4>{{title}}</h4> </div>
+    <div class="inputtext-input"> 
+     <input class="inputtext-textbox" 
+            type="{{type}}" 
+            (input)="onChange.emit($event.target.value)"
+            value="{{value}}"
+            placeholder="{{placeholder}}"
+            [ngClass]="{'red-box': invalid && submitted}" /> 
+    </div>
+    <div *ngIf="invalid && submitted"> <span class="inputtext-validation">{{validation}}</span> </div>
+</div>
+

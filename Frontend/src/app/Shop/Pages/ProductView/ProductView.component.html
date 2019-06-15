@@ -1,0 +1,89 @@
+
+<div class="page" *ngIf="(inProgress$ | async) == false">
+    <div class="body">
+        <form class="product-view-editor" #form="ngForm" (ngSubmit)="form.valid && handleSubmit(product)" novalidate (click)="$event.stopPropagation()">
+            <div class="product-view-cover">
+                <img [src]="product?.Poster" />
+            </div>
+            <div class="product-view-details">
+                <div class="product-view-input">
+                    <input-text
+						[title]="'Title'"
+						[value]="product?.Title"
+						[validation]="'Invalide!,&ensp;Min length must be 2 characters'"
+						[placeholder]="'Insert product name'"
+						[submitted]="form.submitted"
+						[invalid]="title.invalid"
+						[ngModel]="product?.Title"
+						(onChange)="product.Title=$event"
+						name="title"
+						#title="ngModel"
+						ngDefaultControl
+						minlength="2"
+						required >
+					</input-text>
+                </div>
+                
+                <div class="product-view-input">
+                    <input-text
+						[title]="'Poster'"
+						[value]="product?.Poster"
+						[validation]="'Invalide!,&ensp;Min length must be 2 characters'"
+						[placeholder]="'Insert product name'"
+						[submitted]="form.submitted"
+						[invalid]="poster.invalid"
+						[ngModel]="product?.Poster"
+						(onChange)="product.Poster=$event"
+						name="poster"
+						#poster="ngModel"
+						ngDefaultControl
+						minlength="2"
+						required >
+					</input-text>
+                </div>
+
+                <div class="product-view-input">
+                    <input-select
+                        [title]="'Type'"
+                        [value]="product?.Type"
+						[submitted]="form.submitted"
+						[invalid]="type.invalid"
+						[ngModel]="product?.Type"
+						(onChange)="product.Type=$event"
+						name="type"
+						#type="ngModel"
+						ngDefaultControl
+						minlength="2"
+						required >
+					</input-select>
+                </div>
+
+                <div class="product-view-input">
+                    <input-date
+                        [title]="'Release Date'"
+                        [value]="product?.Year"
+                        [min]="'1888-01-11'"
+                        [validation]="'Please choose a valid date!'"
+                        [submitted]="form.submitted"
+                        [invalid]="date.invalid"
+                        (onChange)="product.Year=$event"
+                        [ngModel]="product.Year"
+                        name="date"
+                        #date="ngModel"
+                        ngDefaultControl
+                        required>
+                    </input-date>
+                </div>
+
+                <div class="product-view-controls">
+                    <button type="submit" class="product-view-button">Update</button>
+                    <button type="button" class="product-view-button" (click)="navigateBackHome()">back</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>      
+
+
+
+

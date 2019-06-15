@@ -1,0 +1,29 @@
+@import './src/assets/Config/Colors';
+
+.inputselect-main {
+    display: block;
+    width: 100%;
+    color: $color-white;
+  
+}
+
+.inputselect-select {
+    height: 30px;
+    width: 100%;
+    padding: 0px 5px;
+    font-weight: bold;
+    text-align: center;
+    outline-style: none;
+    border: thin solid $color-white;
+    color: $color-white;
+    background: transparent;
+}
+
+select option {
+    margin: 40px;
+    background: $color-black;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+

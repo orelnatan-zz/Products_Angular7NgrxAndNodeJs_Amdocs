@@ -1,0 +1,53 @@
+@import './src/assets/Config/Layouts';
+@import './src/assets/Config/Icons';
+@import './src/assets/Config/Colors';
+
+.page {
+    @extend %page;
+
+    .body {
+        @extend %body;
+    }
+
+   .product-view-cover {
+       float: left;
+       background: black;
+       width: 200px;
+       height: 300px;
+   }
+
+   .product-view-details {
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between;
+       flex-wrap: wrap;
+       width: 65%;
+       margin-top: -30px;
+       float: right;
+   }
+
+   .product-view-input {
+       width: 45%;
+       margin-top: 30px;
+   }
+
+   .product-view-controls {
+       display: flex;
+       flex-direction: row-reverse;
+       width: 100%;
+       margin-top: 120px;
+   }
+
+   .product-view-button {
+       height: 30px;
+       width: 21.5%;
+       color: $color-white;
+       cursor: pointer;
+       background: transparent;
+       border: thin solid $color-white;
+
+       &:first-child { 
+          margin-left: 10px;
+      }
+   }
+}

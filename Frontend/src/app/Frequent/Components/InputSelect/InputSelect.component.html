@@ -1,0 +1,13 @@
+
+<div class="inputselect-main">
+    <div class="inputselect-title"> <h4>{{title}}</h4> </div>
+    <div class="inputselect-input"> 
+        <select class="inputselect-select" value="{{value}}" (change)="onChange.emit($event.target.value)" >
+            <option>game</option>
+            <option>movie</option>
+            <option>series</option>
+        </select>
+    </div>
+    <div *ngIf="invalid && submitted"> <span class="inputselect-validation">{{validation}}</span> </div>
+</div>
+

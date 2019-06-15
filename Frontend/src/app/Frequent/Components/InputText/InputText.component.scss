@@ -1,0 +1,27 @@
+@import './src/assets/Config/Colors';
+
+.inputtext-main {
+    position: relative;
+    display: block;
+    width: 100%;
+    color: $color-white;
+}
+
+.inputtext-textbox {
+    height: 30px;
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+    outline-style: none;
+    border: thin solid $color-white;
+    color: $color-white;
+    background: transparent;
+}
+
+.inputtext-validation {
+    position: absolute;
+    font-size: 13px;
+    color: $color-error;
+    margin-top: 3px;
+}
+

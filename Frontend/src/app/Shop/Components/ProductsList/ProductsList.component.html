@@ -1,0 +1,22 @@
+
+<div class="products-list-main" >
+    <div *ngFor="let product of products$ | async">
+        <div [ngSwitch]="view$ | async">
+            <div class="products-list-product" *ngSwitchCase="'grid'" >
+                <product-box 
+                    [product]="product"
+                    (deleted)="handleDelete($event)" 
+                    (selected)="onSelect.emit($event)">
+                </product-box>
+            </div>
+
+            <div class="products-list-product" *ngSwitchCase="'list'" >
+                <product-row 
+                    [product]="product"
+                    (deleted)="handleDelete($event)"  
+                    (selected)="onSelect.emit($event)">
+                </product-row>
+            </div>
+        </div>
+    </div>
+</div>

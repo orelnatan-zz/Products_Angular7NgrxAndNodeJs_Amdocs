@@ -1,0 +1,17 @@
+
+<div class="inputdate-main">
+    <div class="inputdate-title" ><h4>{{title}}</h4></div>
+    <div class="inputdate-input">
+        <input 
+            class="inputdate-box" 
+            type="date"
+            value="{{convertToCalenderFormat(value)}}"
+            min="{{min}}"
+            max="{{max}}"
+            (input)="onChange.emit(convertToUnixFormat(calederReference.value))"
+            onkeypress='return(event.charCode > 12 && event.charCode < 12)'
+            #calederReference
+        />
+    </div>
+    <div *ngIf="invalid && submitted"> <span class="inputdate-validation">{{validation}}</span> </div>
+</div> 
