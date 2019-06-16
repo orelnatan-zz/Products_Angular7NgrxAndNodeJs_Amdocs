@@ -5,13 +5,7 @@ import { Observable, of as observableOf } from 'rxjs';
 import { map, catchError, delay } from 'rxjs/operators';
 import { throwError, } from 'rxjs';
 import { Product } from '../Models/Product.model';
-import { ProductsResponse } from '../Models/ProductsResponse.model';
-import { Update } from '../Models/Update.model';
-
-interface response {
-    message: string,
-    status: number
-}
+import { Response } from '../Models/Response.model';
 
 @Injectable()
 export class Products {
@@ -45,25 +39,25 @@ export class Products {
 			)
     }
 
-    public deleteProductById(imdbID: string): Observable<number> {
+    public deleteProductById(imdbID: string): Observable<Response> {
         let params: HttpParams = new HttpParams();
         params = params.append('imdbID', imdbID);
         
         return this.httpClient.delete(environment.apis.products.deleteProductById, {
             params: params,
         }).pipe(
-				map((response: response) => {
-                    return response.status;       
+				map((response: Response): Response => {
+                    return response;       
 				}), catchError((error) => {
 					return throwError(error);  
 				})
 			)
     }
 
-    public updateProduct(product: Product): Observable<number> {  
+    public updateProduct(product: Product): Observable<Response> {  
         return this.httpClient.put(environment.apis.products.updateProduct, product).pipe(
-				map((response: response) => {
-                    return response.status;       
+				map((response: Response): Response => {
+                    return response;       
 				}), catchError((error) => {
 					return throwError(error);  
 				})

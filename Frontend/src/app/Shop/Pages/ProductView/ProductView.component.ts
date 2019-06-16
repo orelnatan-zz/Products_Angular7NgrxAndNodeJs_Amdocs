@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation,  } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy,   } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ProductsActions, ProductsSelectors } from '../../../Store';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   selector: 'product-view',
   templateUrl: './ProductView.component.html',
   styleUrls: ['./ProductView.component.scss'],
-  encapsulation: ViewEncapsulation.Emulated,  
+  changeDetection: ChangeDetectionStrategy.OnPush  
 })
 
 export class ProductView implements OnInit {

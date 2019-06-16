@@ -1,9 +1,10 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'input-text',
   templateUrl: './InputText.component.html',
   styleUrls: [ './InputText.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class InputText {
@@ -16,5 +17,4 @@ export class InputText {
     @Input() invalid: boolean;
 
     @Output() onChange: EventEmitter<any> = new EventEmitter();
-
 }

@@ -1,9 +1,9 @@
-import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { Product } from '../../../../Models/Product.model';
 
 @Component({
   template: ``,
-  encapsulation: ViewEncapsulation.Emulated,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 // This component is inherited by ProductBox and ProductRow components //
 export class ProductEntity {

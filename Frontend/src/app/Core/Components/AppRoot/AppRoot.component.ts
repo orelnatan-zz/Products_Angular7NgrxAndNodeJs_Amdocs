@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef, AfterViewChecked, ViewEncapsulation } from '@angular/core';
+import { Component, ChangeDetectorRef, AfterViewChecked, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { ProductsSelectors } from '../../../Store';
@@ -9,7 +9,7 @@ import { AppState } from '../../../Store/AppState.model';
   selector: 'app-root',
   templateUrl: './AppRoot.component.html',
   styleUrls: ['./AppRoot.component.scss'],
-  encapsulation: ViewEncapsulation.Emulated, // Encapsulating styles ...
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 // Top Level Component //
 export class AppRoot implements AfterViewChecked {

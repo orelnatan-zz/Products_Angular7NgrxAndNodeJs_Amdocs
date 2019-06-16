@@ -1,6 +1,5 @@
 import { Action } from '@ngrx/store';
 import { Product } from '../../Shop/Models/Product.model';
-import { Update as UpdateModel } from '../../Shop/Models/Update.model';
 
 export enum ActionTypes {
 	LOAD = '[PRODUCTS] Load',
@@ -91,5 +90,14 @@ export class Refresh implements Action {
     constructor(){}
 }
 
-export type Actions = Load | Rejected | Ready | Type | Sort | Filter | Delete | View | Update | Refresh;
+export type Actions = Load      | 
+                      Rejected  | 
+                      Ready     | 
+                      Type      | 
+                      Sort      | 
+                      Filter    | 
+                      Delete    | 
+                      View      | 
+                      Update    |
+                      Refresh;
 					

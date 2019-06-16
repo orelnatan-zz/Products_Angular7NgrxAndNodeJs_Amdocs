@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
+import { Component, Output, EventEmitter, ViewChild, ElementRef, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -11,7 +11,7 @@ import { ProductsSelectors } from '../../../../../Store';
   selector: 'search-box',
   templateUrl: './SearchBox.component.html',
   styleUrls: [ './SearchBox.component.scss'],
-  encapsulation: ViewEncapsulation.Emulated,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class SearchBox {
@@ -20,10 +20,9 @@ export class SearchBox {
     
     value: FormControl = new FormControl();
    
-    sort$: Observable<string>;
     filter$: Observable<string>;
 
-    constructor(private store$: Store<AppState>,){
+    constructor(private store$: Store<AppState>){
         this.value.valueChanges
                   .pipe(debounceTime(600))
 							   .subscribe((value: string) => {

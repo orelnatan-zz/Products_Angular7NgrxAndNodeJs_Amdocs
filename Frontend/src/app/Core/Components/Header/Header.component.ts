@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 
@@ -9,6 +9,7 @@ import { AppState } from '../../../Store/AppState.model';
   selector: 'header',
   templateUrl: './Header.component.html',
   styleUrls: ['./Header.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class Header {

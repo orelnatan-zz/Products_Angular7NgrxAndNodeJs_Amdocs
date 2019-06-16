@@ -107,9 +107,9 @@ function filterByText(products: Array<Product>, text: string): Array<Product> {
 
 function sortByDirection(products: Array<Product>, direction: string): Array<Product> {
     return products.sort((arg1, arg2) => {
-        const title1 = isNaN ? arg1.Title.toUpperCase() : arg1.Title; 
-        const title2 = isNaN ? arg2.Title.toUpperCase() : arg2.Title;
-        const action = direction == 'desc' ? ((title1 < title2) ? -1 : ((title1 > title2) ? 1 : 0)) : ((title1 > title2) ? -1 : ((title1 < title2) ? 1 : 0));
+        const title1: string = isNaN ? arg1.Title.toUpperCase() : arg1.Title; 
+        const title2: string = isNaN ? arg2.Title.toUpperCase() : arg2.Title;
+        const action: number = direction == 'desc' ? ((title1 < title2) ? -1 : ((title1 > title2) ? 1 : 0)) : ((title1 > title2) ? -1 : ((title1 < title2) ? 1 : 0));
         return action;
     });
 }

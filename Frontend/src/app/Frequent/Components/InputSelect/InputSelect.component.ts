@@ -1,9 +1,10 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'input-select',
   templateUrl: './InputSelect.component.html',
   styleUrls: [ './InputSelect.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class InputSelect {
