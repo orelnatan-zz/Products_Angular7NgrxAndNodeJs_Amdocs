@@ -5,7 +5,7 @@
             type="text" 
             placeholder="Search title or date ..."
             value="{{filter$ | async}}"
-            [formControl]="value" />
-    <span class="search-box-clear icon icon-close" tooltip="Clear" placement="left" delay="500" (click)="clear()"> </span>
+            [formControl]="keyword" />
+    <span class="search-box-clear icon icon-close" tooltip="Clear" placement="left" delay="500" (click)="filterByText(null)"> </span>
 </div>
 

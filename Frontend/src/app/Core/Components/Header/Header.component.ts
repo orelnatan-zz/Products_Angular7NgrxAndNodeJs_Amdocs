@@ -47,14 +47,6 @@ export class Header {
         );
     }
 
-    filterByText(text: string): void {        
-        this.store$.dispatch(
-			new ProductsActions.Filter({
-                text: text
-            })
-        );
-    }
-
     filterByType(type: string): void {        
         this.store$.dispatch(
 			new ProductsActions.Type({

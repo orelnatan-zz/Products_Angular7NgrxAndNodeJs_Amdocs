@@ -1,11 +1,12 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
-import * as moment from 'moment';
+import { ToUnixFormat } from './Pips/ToUnixFormat.pipe';
 
 @Component({
   selector: 'input-date',
   templateUrl: './InputDate.component.html',
   styleUrls: ['./InputDate.component.scss', ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [ ToUnixFormat, ]
 })
 
 export class InputDate {
@@ -19,11 +20,11 @@ export class InputDate {
 
   @Output() onChange: EventEmitter<any> = new EventEmitter();
 
-  convertToCalenderFormat(date: string): string {
-    return moment(parseInt(date)).format('YYYY-MM-DD');
-  }
+  constructor(
+      private toUnixFormat: ToUnixFormat
+    ) {}
 
-  convertToUnixFormat(date): string {
-    return (new Date(date).getTime()).toString();
+  convertToUnixFormat(date: string): string {
+    return this.toUnixFormat.transform(date);
   }
 }

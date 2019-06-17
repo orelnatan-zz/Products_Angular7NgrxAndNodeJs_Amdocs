@@ -3,7 +3,7 @@
     <div class="body">
         <form class="product-view-editor" #form="ngForm" (ngSubmit)="form.valid && handleSubmit(product)" novalidate (click)="$event.stopPropagation()">
             <div class="product-view-cover">
-                <img [src]="product?.Poster" />
+                <img class="product-view-image" [src]="product?.Poster" />
             </div>
             <div class="product-view-details">
                 <div class="product-view-input">

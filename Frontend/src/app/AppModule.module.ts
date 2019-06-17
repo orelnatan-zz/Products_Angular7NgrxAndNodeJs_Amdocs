@@ -14,7 +14,10 @@ import { Products } from './Shop/Services/Products.service';
 import { Selected } from './Core/Components/Header/Directives/Selected/Selected.directive';
 import { Tooltip } from './Core/Directives/Tooltip/Tooltip.directive';
 
-import { ProductDate } from './Shop/Pips/ProductDate.pipe';
+
+import { ToCalenderFormat } from './Frequent/Components/InputDate/Pips/ToCalenderFormat.pipe';
+import { ToUnixFormat } from './Frequent/Components/InputDate/Pips/ToUnixFormat.pipe';
+import { ProductDate } from './Shop/Components/ProductsList/Components/ProductEntity/Pips/ProductDate.pipe';
 
 import { AppRoot } from './Core/Components/AppRoot/AppRoot.component';
 import { Home } from './Shop/Pages/Home/Home.component';
@@ -31,7 +34,6 @@ import { PageNotFound } from './Core/Pages/PageNotFound/PageNotFound.component';
 import { InputText } from './Frequent/Components/InputText/InputText.component';
 import { InputSelect } from './Frequent/Components/InputSelect/InputSelect.component';
 import { InputDate } from './Frequent/Components/InputDate/InputDate.component';
-
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { InputDate } from './Frequent/Components/InputDate/InputDate.component';
     Selected,
     Tooltip,
     ProductDate,
+    ToCalenderFormat,
+    ToUnixFormat,
     InputText,
     InputSelect,
     InputDate

@@ -1,11 +1,11 @@
-import { Component, Output, EventEmitter, ViewChild, ElementRef, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 
 import { AppState } from '../../../../../Store/AppState.model';
-import { ProductsSelectors } from '../../../../../Store';
+import { ProductsSelectors, ProductsActions } from '../../../../../Store';
 
 @Component({
   selector: 'search-box',
@@ -15,18 +15,14 @@ import { ProductsSelectors } from '../../../../../Store';
 })
 
 export class SearchBox {
-    @ViewChild('boxReference') boxReference: ElementRef;
-    @Output() onChange: EventEmitter<any> = new EventEmitter();
-    
-    value: FormControl = new FormControl();
-   
+    keyword: FormControl = new FormControl();
     filter$: Observable<string>;
 
     constructor(private store$: Store<AppState>){
-        this.value.valueChanges
-                  .pipe(debounceTime(600))
-							   .subscribe((value: string) => {
-			this.onChange.emit(value);
+        this.keyword.valueChanges
+                  .pipe(debounceTime(1000))
+							   .subscribe((keyword: string) => {
+            this.filterByText(keyword);
         });
         
         this.filter$ = this.store$.select (
@@ -34,7 +30,11 @@ export class SearchBox {
         )
     }
 
-    clear(): void {
-        this.onChange.emit(null);
+    filterByText(text: string): void {        
+        this.store$.dispatch(
+			new ProductsActions.Filter({
+                text: text
+            })
+        );
     }
 }

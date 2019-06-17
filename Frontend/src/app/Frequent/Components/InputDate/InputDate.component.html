@@ -5,7 +5,7 @@
         <input 
             class="inputdate-box" 
             type="date"
-            value="{{convertToCalenderFormat(value)}}"
+            value="{{value | toCalenderFormat}}"
             min="{{min}}"
             max="{{max}}"
             (input)="onChange.emit(convertToUnixFormat(calederReference.value))"
