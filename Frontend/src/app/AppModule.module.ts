@@ -14,7 +14,6 @@ import { Products } from './Shop/Services/Products.service';
 import { Selected } from './Core/Components/Header/Directives/Selected/Selected.directive';
 import { Tooltip } from './Core/Directives/Tooltip/Tooltip.directive';
 
-
 import { ToCalenderFormat } from './Frequent/Components/InputDate/Pips/ToCalenderFormat.pipe';
 import { ToUnixFormat } from './Frequent/Components/InputDate/Pips/ToUnixFormat.pipe';
 import { ProductDate } from './Shop/Components/ProductsList/Components/ProductEntity/Pips/ProductDate.pipe';

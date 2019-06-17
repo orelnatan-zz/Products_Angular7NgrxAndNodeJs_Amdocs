@@ -2,10 +2,10 @@
 <div class="page" *ngIf="(inProgress$ | async) == false">
     <div class="body">
         <form class="product-view-editor" #form="ngForm" (ngSubmit)="form.valid && handleSubmit(product)" novalidate (click)="$event.stopPropagation()">
-            <div class="product-view-cover">
+            <section class="product-view-cover">
                 <img class="product-view-image" [src]="product?.Poster" />
-            </div>
-            <div class="product-view-details">
+            </section>
+            <section class="product-view-details">
                 <div class="product-view-input">
                     <input-text
 						[title]="'Title'"
@@ -79,7 +79,7 @@
                     <button type="submit" class="product-view-button">Update</button>
                     <button type="button" class="product-view-button" (click)="navigateBackHome()">back</button>
                 </div>
-            </div>
+            </section>
         </form>
     </div>
 </div>      
