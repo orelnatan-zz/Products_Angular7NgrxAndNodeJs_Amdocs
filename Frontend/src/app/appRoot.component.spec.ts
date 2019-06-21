@@ -1,5 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
-import { AppRoot } from './AppRoot.component';
+import { AppRoot } from './appRoot.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({

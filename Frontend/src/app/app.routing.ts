@@ -5,11 +5,11 @@ import { ProductView } from './Shop/Pages/ProductView/ProductView.component';
 import { PageNotFound } from './Core/Pages/PageNotFound/PageNotFound.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: 'Home', pathMatch: 'full' },
-    { path: 'Home', component: Home },
-    { path: 'Product-view', component: ProductView },
+    { path: '', redirectTo: 'home', pathMatch: 'prefix' },
+    { path: 'home', loadChildren: './Shop/Shop.module#ShopModule' },
+ //   { path: 'Product-view', component: ProductView },
 
-    { path: '**', component: PageNotFound },
+   // { path: '**', component: PageNotFound },
 ];
 
 @NgModule({
@@ -17,4 +17,4 @@ const routes: Routes = [
     exports: [ RouterModule ]
 })
   
-export class RoutingModule {}
+export class AppRoutingModule {}

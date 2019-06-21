@@ -1,14 +1,14 @@
 import { Component, ChangeDetectorRef, AfterViewChecked, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { ProductsSelectors } from '../../../Store';
+import { ProductsSelectors } from './Store';
 
-import { AppState } from '../../../Store/AppState.model';
+import { AppState } from './Store/AppState.model';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './AppRoot.component.html',
-  styleUrls: ['./AppRoot.component.scss'],
+  templateUrl: './appRoot.component.html',
+  styleUrls: ['./appRoot.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 // Top Level Component //
