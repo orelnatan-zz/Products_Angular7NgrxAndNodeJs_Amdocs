@@ -9,11 +9,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppRoutingModule } from './app.routing';
 import { AppStoreModule } from './Store/AppStore.module';
 import { CoreModule } from './Core/Core.module';
-import { ShopModule } from './Shop/Shop.module';
 import { SharedModule } from './Shared/Shared.module';
 
 import { AppRoot } from './appRoot.component';
-import { Products } from './Shop/Services/Products.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +24,7 @@ import { Products } from './Shop/Services/Products.service';
     ReactiveFormsModule,
     FormsModule,
     CoreModule,
-  //  ShopModule,
+  //  ShopModule, // its alredy lazy loaded... 
     SharedModule,
     MomentModule,
     AppRoutingModule,
