@@ -52,6 +52,6 @@ export class ProductView implements OnInit {
     }
 
     navigateBackHome(): void {
-        this.router.navigate(['/home']);
+        this.router.navigate(['shop/home']);
     }
 }

@@ -7,6 +7,7 @@ import { ShopRoutingModule } from './Shop.routing';
 
 import { Products } from './Services/Products.service';
 
+import { ShopRoot } from './Components/ShopRoot/ShopRoot.component';
 import { Home } from './Pages/Home/Home.component';
 import { ProductView } from './Pages/ProductView/ProductView.component';
 import { ProductsList } from './Components/ProductsList/ProductsList.component';
@@ -16,9 +17,9 @@ import { ProductRow } from './Components/ProductsList/Components/ProductEntity/C
 
 import { ProductDate } from './Components/ProductsList/Components/ProductEntity/Pips/ProductDate.pipe';
 
-
 @NgModule({
     declarations: [
+        ShopRoot,
         Home,
         ProductView,
         ProductsList,

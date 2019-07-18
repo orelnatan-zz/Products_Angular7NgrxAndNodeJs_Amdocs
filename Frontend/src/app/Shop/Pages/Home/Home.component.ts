@@ -25,7 +25,7 @@ export class Home implements OnInit {
     }
 
     navigateToProductPage(imdbID: string): void {
-        this.router.navigate(['/product-view'], {
+        this.router.navigate(['shop/product-view'], {
             queryParams: {
                 imdbID: imdbID,
             }

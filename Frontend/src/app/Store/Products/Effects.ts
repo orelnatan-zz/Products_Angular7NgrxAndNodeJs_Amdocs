@@ -65,7 +65,7 @@ export class ProductsEffects {
 		switchMap((action: ProductsActions.Update): Observable<Action> => {
 			return this.products.updateProduct(action.payload.product).pipe(
 				map((): ProductsActions.Load => {
-                    this.router.navigate(['/home']);
+                    this.router.navigate(['shop/home']);
                     return new ProductsActions.Load({})
 				}),
 				catchError(() => {

@@ -19,7 +19,17 @@ mySqlConnection.connect((err) => {
 	} else {
 		console.log('DB connection failed! \n Error : ' + JSON.stringify(err, undefined, 2));
 	}
-})
+});
+
+// Fix the "Access to XMLHttpRequest at 'http://localhost:3001/getProductById?imdbID=tt1123436' from origin 'http://localhost:4200' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource." problem...
+const allowCrossDomain = function(req, res, next) { 
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+  
+    next();
+}
+app.use(allowCrossDomain);
 
 app.listen(3001, () => {
 	console.log('express server is running at port number 3001');
